@@ -11,7 +11,25 @@
 </head>
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <my-component id="watcherFails"></my-component>
+  <my-component id="watcherWorks"></my-component>
 
+  <script>
+
+    var histogram = [
+      [0, 0],
+      [20, 12],
+      [40, 25],
+      [60, 55],
+      [80, 10],
+      [100, 0]
+    ];
+
+    const watcherFails = document.querySelector("#watcherFails");
+    watcherFails.histogram = histogram;
+
+    const watcherWorks = document.querySelector("#watcherWorks");
+    setTimeout(() => watcherWorks.histogram = histogram, 2000)
+  </script>
 </body>
 </html>
