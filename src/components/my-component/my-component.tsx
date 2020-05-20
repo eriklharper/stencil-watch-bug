@@ -14,6 +14,12 @@ export class MyComponent {
     console.log(`MyComponent#${this.el.getAttribute("id")} histogramWatcher fired`);
   }
 
+  @Prop({ reflect: true }) hasHistogram: boolean;
+  @Watch("hasHistogram")
+  hasHistogramWatcher() {
+    console.log(`MyComponent#${this.el.getAttribute("id")} hasHistogramWatcher fired`);
+  }
+
   render() {
     return <div>{this.el.getAttribute("id")}</div>;
   }

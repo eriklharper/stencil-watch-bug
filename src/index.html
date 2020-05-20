@@ -27,9 +27,13 @@
 
     const watcherFails = document.querySelector("#watcherFails");
     watcherFails.histogram = histogram;
+    watcherFails.hasHistogram = true;
 
     const watcherWorks = document.querySelector("#watcherWorks");
-    setTimeout(() => watcherWorks.histogram = histogram, 2000)
+    setTimeout(() => {
+      watcherWorks.histogram = histogram;
+      watcherWorks.hasHistogram = true;
+    }, 2000)
   </script>
 </body>
 </html>
